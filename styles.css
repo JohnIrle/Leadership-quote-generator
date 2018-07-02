@@ -1,0 +1,16 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: helvetica;
+}
+
+body {
+  padding-top: 70px;
+  background: url(http://i64.tinypic.com/mkvhbn.jpg) no-repeat center center fixed;
+
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  margin: 50px;
+}
