@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { quote, auth } from "./quotes";
+import NavBar from "./components/NavBar";
 
 class App extends React.Component {
 
@@ -46,30 +47,19 @@ class App extends React.Component {
     }
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-          <a className="navbar-brand" href="http://github.com/JohnIrle">John Irle</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" href="..">Home</a></li>
-              <li className="nav-item"><a className="nav-link" href="../#about">About</a></li>
-              <li className="nav-item"><a className="nav-link" href="../#portfolio">Portfolio</a></li>
-              <li className="nav-item"><a className="nav-link" href="../#contact">Contact</a></li>
-              <li className="nav-item"><a className="nav-link" href="http://johnirle.com/blog/" >Blog</a></li>
-            </ul>
-          </div>
-        </nav>
+        <NavBar />
         <div className="container">
           <div className="jumbotron">
             {quote}
             {auth}
             <div className="text-center">
-              <button className="btn btn-success quote-btn" type="button" onClick={this.handleClick}>
+              <button className="btn btn-success quote-btn mr-1" type="button" onClick={this.handleClick}>
                 Give me a quote.
-        </button>
-              <button className="btn btn-warning" onClick={this.handleTweet}>Tweet</button>
+              </button>
+
+              <button className="btn btn-warning" onClick={this.handleTweet}>
+                Tweet
+              </button>
             </div>
           </div>
         </div>
