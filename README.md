@@ -2,11 +2,11 @@
 
 ![Screenshot](/quote-lg.png)
 
-A quote generator that uses a random number to display a quote and author from an array.
+Randomly selects and displays a leadership quote from an author. The user then has the option to tweet the quote.
 
 ## Built With
 
-* [jQuery](https://github.com/jquery/jquery)
+* [React](https://github.com/facebook/react)
 * [Bootstrap](https://github.com/twbs/bootstrap)
 
 ## Author
