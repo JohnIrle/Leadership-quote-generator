@@ -1,71 +1,66 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { quote, auth } from "./quotes";
+import { quotes } from "./quotes";
 import NavBar from "./components/NavBar";
 
-class App extends React.Component {
+const App = () => {
+    const [state, setState] = useState({
+        quote: "Welcome to the Leadership quote generator.",
+        auth: "Click the button to generate a quote.",
+        tweet: false,
+    });
 
-  constructor(props) {
-    super(props);
-    this.state = { quote: "", auth: "" }
+    const { quote, auth, tweet } = state;
 
-    this.handleClick = this.handleClick.bind(this);
-    this.handleTweet = this.handleTweet.bind(this);
-  }
+    const handleClick = () => {
+        const x = Math.floor(Math.random() * auth.length) + 1;
 
-  handleClick() {
-    var x = Math.floor(Math.random() * auth.length) + 1;
+        const split = quotes[x].split("@");
 
-    this.setState({ quote: quote[x], auth: auth[x] })
-  }
+        setState({ quote: split[0], auth: "-" + split[1], tweet: true });
+    };
 
-  handleTweet() {
-    let tweet;
-    if (this.state.auth) {
-      tweet = "https://twitter.com/intent/tweet?text=" + this.state.quote.trim(0, (280 - (this.state.auth.length + 2))) + " " + this.state.auth
-    } else {
-      tweet = "https://twitter.com/intent/tweet?text=Generate a quote first."
-    }
+    const handleTweet = () => {
+        let tweet =
+            "https://twitter.com/intent/tweet?text=" +
+            quote.trim(0, 280 - (auth.length + 2)) +
+            " " +
+            auth;
 
+        window.open(tweet);
+    };
 
-
-    window.open(tweet);
-
-  }
-
-
-
-  render() {
-    let quote, auth;
-    if (this.state.quote) {
-      quote = <h2 className="quote text-center">{this.state.quote}</h2>
-      auth = <h3 className="auth text-center">{this.state.auth}</h3>
-    } else {
-      quote = <h2 className="quote text-center">Welcome to the Leadership quote generator.</h2>
-      auth = <h3 className="auth text-center">Click the button to generate a quote.</h3>
-    }
     return (
-      <>
-        <NavBar />
-        <div className="container">
-          <div className="jumbotron">
-            {quote}
-            {auth}
-            <div className="text-center">
-              <button className="btn btn-success quote-btn mr-1" type="button" onClick={this.handleClick}>
-                Give me a quote.
-              </button>
+        <>
+            <NavBar />
+            <div className="container">
+                <div className="jumbotron">
+                    <h2 className="quote text-center">{quote}</h2>
+                    <h4 className="auth text-center">{auth}</h4>
+                    <div className="text-center">
+                        <button
+                            className="btn btn-success quote-btn mr-1"
+                            type="button"
+                            onClick={() => handleClick()}
+                        >
+                            Give me a quote.
+                        </button>
 
-              <button className="btn btn-warning" onClick={this.handleTweet}>
-                Tweet
-              </button>
+                        <button
+                            className={`btn btn-warning ${
+                                tweet ? "" : "disabled"
+                            }`}
+                            disabled={!tweet}
+                            onClick={() => handleTweet()}
+                        >
+                            Tweet
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </>
+        </>
     );
-  }
-}
+};
 
 export default App;
