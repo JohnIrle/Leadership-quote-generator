@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import { quotes } from "./quotes";
-import NavBar from "./components/NavBar";
+
+import { Container, Jumbotron } from "react-bootstrap";
 
 const App = () => {
     const [state, setState] = useState({
@@ -33,9 +34,8 @@ const App = () => {
 
     return (
         <>
-            <NavBar />
-            <div className="container">
-                <div className="jumbotron">
+            <Container>
+                <Jumbotron style={{ marginTop: "5rem" }}>
                     <h2 className="quote text-center">{quote}</h2>
                     <h4 className="auth text-center">{auth}</h4>
                     <div className="text-center">
@@ -57,8 +57,8 @@ const App = () => {
                             Tweet
                         </button>
                     </div>
-                </div>
-            </div>
+                </Jumbotron>
+            </Container>
         </>
     );
 };
