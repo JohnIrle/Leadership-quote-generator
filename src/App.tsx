@@ -9,7 +9,7 @@ const App = () => {
   const [state, setState] = useState({
     quote: "Welcome to the Leadership quote generator.",
     auth: "Click the button to generate a quote.",
-    tweet: false
+    tweet: false,
   });
 
   const { quote, auth, tweet } = state;
@@ -23,9 +23,8 @@ const App = () => {
   };
 
   const handleTweet = () => {
-    let text = `${quote.slice(0, 280 - (auth.length + 2))}\n${auth}`
-    let tweet =
-      `https://x.com/intent/post?text=${encodeURIComponent(text)}`;
+    const text = `${quote.slice(0, 280 - (auth.length + 2))}\n${auth}`;
+    const tweet = `https://x.com/intent/post?text=${encodeURIComponent(text)}`;
 
     window.open(tweet);
   };
@@ -46,9 +45,7 @@ const App = () => {
             </Button>
 
             <Button
-              className={`btn btn-warning ${
-                tweet ? "" : "disabled"
-              }`}
+              className={`btn btn-warning ${tweet ? "" : "disabled"}`}
               disabled={!tweet}
               onClick={() => handleTweet()}
             >
