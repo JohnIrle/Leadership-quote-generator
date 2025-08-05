@@ -6,9 +6,9 @@ Randomly selects and displays a leadership quote from an author. The user then h
 
 ## Built With
 
-* [React](https://github.com/facebook/react)
-* [Bootstrap](https://github.com/twbs/bootstrap)
+- [React](https://github.com/facebook/react)
+- [Bootstrap](https://github.com/twbs/bootstrap)
 
 ## Author
 
-* **John Irle** - [JohnIrle](https://github.com/JohnIrle)
+- **John Irle** - [JohnIrle](https://github.com/JohnIrle)
