@@ -1,7 +1,6 @@
-import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
-function NavBar(props) {
+function NavBar() {
     return (
         <Navbar bg="light" expand="lg" fixed="top">
             <Navbar.Brand href="http://github.com/JohnIrle">
