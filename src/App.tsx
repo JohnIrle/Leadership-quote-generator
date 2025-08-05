@@ -23,11 +23,9 @@ const App = () => {
   };
 
   const handleTweet = () => {
+    let text = `${quote.slice(0, 280 - (auth.length + 2))}\n${auth}`
     let tweet =
-      "https://x.com/intent/post?text=" +
-      quote.slice(0, 280 - (auth.length + 2)) +
-      " " +
-      auth;
+      `https://x.com/intent/post?text=${encodeURIComponent(text)}`;
 
     window.open(tweet);
   };
