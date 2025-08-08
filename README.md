@@ -1,3 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2019 John Irle
+SPDX-License-Identifier: MIT
+
+This file is part of Leadership-quote-generator
+-->
+
 # Leadership-quote-generator
 
 ![Screenshot](/quote-lg.png)

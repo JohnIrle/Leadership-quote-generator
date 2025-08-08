@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2019 John Irle
+// SPDX-License-Identifier: MIT
+//
+// This file is part of Leadership-quote-generator
+
 export const quotes = [
   "A leader is best when people barely know he exists, when his work is done, his aim fulfilled, they will say: we did it ourselves.@Lao Tzu",
   "Where there is no vision, the people perish.@Proverbs 29:18",

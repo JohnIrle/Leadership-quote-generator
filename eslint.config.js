@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2019 John Irle
+// SPDX-License-Identifier: MIT
+//
+// This file is part of Leadership-quote-generator
+
 import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";

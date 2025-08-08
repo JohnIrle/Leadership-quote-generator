@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2019 John Irle
+// SPDX-License-Identifier: MIT
+//
+// This file is part of Leadership-quote-generator
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
