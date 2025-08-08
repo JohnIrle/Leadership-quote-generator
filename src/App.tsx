@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2019 John Irle
+// SPDX-License-Identifier: MIT
+//
+// This file is part of Leadership-quote-generator
+
 import { useState } from "react";
 import "./App.css";
 
